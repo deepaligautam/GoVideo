@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Frijole&family=Kranky&family=Quicksand:wght@300;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');
+:root {
+  --dark-color-a: #2A2756;
+  --dark-color-b: #7B7B7C;
+  --light-color: #e6e9ff;
+  --success-color: #5cb85c;
+  --error-color: #d9534f;
+}
+
+* {
+  box-sizing: border-box;
+  background-color: #3B3E79;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(15, 1fr);
+  grid-auto-rows: 100px;
+
+}
+
+.bigContainer {
+  grid-column-start: 2;
+  grid-column-end: 14;
+  grid-row-start: 2;
+  grid-row-end: 7;
+  z-index: 1;
+}
+
+.smallContainer {
+  grid-column-start: 11;
+  grid-column-end: 15;
+  grid-row-start: 5;
+  grid-row-end: 7;
+  border-radius: 15px;
+  z-index: 2;
+}
+
+.bigVideo {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 25px;
+  box-shadow: 0px 0px 30px 15px #2A2756;
+
+}
+
+.smallVideo {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0px 0px 30px 7px #2A2756;
+
+}
+
+.buttonContainer {
+  grid-column-start: 14;
+  grid-column-end: 15;
+  grid-row-start: 2;
+  grid-row-end: 5;
+  z-index: 0;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.btn {
+  height: 40px;
+  width: 40px;
+  margin-top: 35px;
+  
+}
+
+.buttonContainer img {
+  transition: transform 0.5s;
+}
+
+.btn:hover {
+  transform: translateY(-10px);
+
+}
+
+.btn:active {
+  transform: rotate(90deg);
+}
+
+
+/* modal style */
+.modal {
+  grid-column-start: 1;
+  grid-column-end: 16;
+  grid-row-start: 1;
+  grid-row-end: 8;
+  z-index: 5;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+}
+
+.join-container {
+  max-width: 500px;
+  margin: 80px auto;
+  color: #fff;
+  border-radius: 50px;
+  box-shadow: 0px 0px 150px 80px #1b1c37;
+}
+
+.join-header {
+  text-align: center;
+  padding: 10px;
+  background: var(--dark-color-a);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.join-main {
+  padding: 30px 40px;
+  background: #8c97c8;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.join-main .form-control {
+  margin-bottom: 20px;
+}
+
+.join-main label {
+  display: block;
+  margin-bottom: 5px;
+  background-color: #8c97c8;
+}
+
+.join-main input[type='text'] {
+  font-size: 16px;
+  padding: 5px;
+  height: 40px;
+  width: 100%;
+  border-radius: 15px;
+  background-color: whitesmoke;
+}
+
+.join-main select {
+  font-size: 16px;
+  padding: 5px;
+  height: 40px;
+  width: 100%;
+}
+
+.pushable {
+  font-family: 'Frijole', cursive;
+font-family: 'Kranky', cursive;
+font-family: 'Quicksand', sans-serif;
+  margin-top: 2px;
+  width: 100%;
+  border-radius: 15px;
+  font-size: 14px;
+  position: relative;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  outline-offset: 4px;
+  transition: filter 250ms;
+}
+
+.pushable .shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background: rgba(55, 54, 54, 0.25);
+  will-change: transform;
+  transform: translateY(2px);
+  transition:
+    transform 600ms cubic-bezier(.3, .7, .4, 1);
+}
+
+.pushable .edge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  /*
+  background: linear-gradient(
+    to left,
+    rgb(23, 21, 23) 0%,
+    rgb(57, 49, 52) 8%,
+    rgb(78, 73, 76) 92%,
+    rgb(248, 241, 244) 100%
+  );
+  */
+}
+
+.pushable .front {
+  display: block;
+  position: relative;
+  padding: 12px 42px;
+  border-radius: 12px;
+  font-size: 1.25rem;
+  color: white;
+  background: #2A2756;
+  will-change: transform;
+  transform: translateY(-4px);
+  transition:
+    transform 600ms cubic-bezier(.3, .7, .4, 1);
+}
+
+.pushable:hover {
+  filter: brightness(150%);
+}
+
+.pushable:hover .front {
+  transform: translateY(-6px);
+  transition:
+    transform 250ms cubic-bezier(.3, .7, .4, 1.5);
+}
+
+.pushable:active .front {
+  transform: translateY(-2px);
+  transition: transform 34ms;
+}
+
+.pushable:hover .shadow {
+  transform: translateY(4px);
+  transition:
+    transform 250ms cubic-bezier(.3, .7, .4, 1.5);
+}
+
+.pushable:active .shadow {
+  transform: translateY(1px);
+  transition: transform 34ms;
+}
+
+.pushable:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.inputForm {
+  background-color: #8c97c8;
+}
+
+.form-control {
+  background-color: #8c97c8;
+}
+
+h1 {
+  background-color: #2A2756;
+  font-family: 'Major Mono Display', monospace;
+}
